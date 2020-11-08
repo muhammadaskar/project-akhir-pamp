@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class HeaderWithTitleBox extends StatelessWidget {
-  const HeaderWithTitleBox({
-    Key key,
-    @required this.size,
-  }) : super(key: key);
+  String title;
+  Size size;
+  HeaderWithTitleBox(String title, Size size){
+    this.title = title;
+    this.size = size;
+  }
 
-  final Size size;
+
 
   @override
   Widget build(BuildContext context) {
-
-
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       height: size.height * 0.2,
@@ -65,8 +65,8 @@ class HeaderWithTitleBox extends StatelessWidget {
                 ],
               ),
               child: Text(
-                'Home',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                title,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
 
               ),
             ),

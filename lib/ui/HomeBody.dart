@@ -4,21 +4,22 @@ import 'HeaderWithTitleBox.dart';
 import 'InformasiSlide.dart';
 import 'TitleWithMoreBtn.dart';
 
-class akademikBody extends StatelessWidget {
+class HomeBody extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
+    String title = "Home";
 
     return SingleChildScrollView(
-        child: Column(
+      child: Column(
           children: <Widget>[
-            HeaderWithTitleBox(size: size),
+            HeaderWithTitleBox(title, size),
             TitleWithMoreBtn(title: "Informasi", press: (){}),
             InformasiSlide(),
             SizedBox(height: kDefaultPadding,),
-        ]
+          ]
       ),
     );
   }

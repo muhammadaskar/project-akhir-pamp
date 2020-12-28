@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek_akhir/constants.dart';
+import 'package:projek_akhir/routes/RouteGenerator.dart';
 import 'package:projek_akhir/ui/HomePage.dart';
 import 'package:projek_akhir/ui/AkademikPage.dart';
 
@@ -24,7 +25,9 @@ class _MyAppState extends State<MyApp> {
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: AkademikPage(),
+      home: HomePage(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

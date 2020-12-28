@@ -16,7 +16,7 @@ class HomeBody extends StatelessWidget {
       child: Column(
           children: <Widget>[
             HeaderWithTitleBox(title, size),
-            TitleWithMoreBtn(title: "Informasi", press: (){}),
+            TitleWithMoreBtn(title: "Information", press: (){}),
             InformasiSlide(),
             SizedBox(height: kDefaultPadding,),
           ]

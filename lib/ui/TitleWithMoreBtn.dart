@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class TitleWithMoreBtn extends StatelessWidget{
+class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
     Key key,
     this.title,
     this.press,
-  }) : super (key: key);
+  }) : super(key: key);
   final String title;
   final Function press;
 
-
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: Row(
@@ -22,26 +20,28 @@ class TitleWithMoreBtn extends StatelessWidget{
           TitleWithUnderline(text: title),
           Spacer(),
           FlatButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
               color: kPrimaryColor,
-              onPressed: press,
-              child: Text("More",
+              onPressed: () {
+                Navigator.of(context).pushNamed('/news');
+              },
+              child: Text(
+                "more",
                 style: TextStyle(color: Colors.white),
-              )
-          ),
+              )),
         ],
       ),
     );
   }
 }
 
-
-class TitleWithUnderline extends StatelessWidget{
-  const TitleWithUnderline ({
+class TitleWithUnderline extends StatelessWidget {
+  const TitleWithUnderline({
     Key key,
     this.text,
-  }) : super (key: key);
+  }) : super(key: key);
 
   final String text;
 
@@ -53,7 +53,9 @@ class TitleWithUnderline extends StatelessWidget{
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: kDefaultPadding / 4),
-            child: Text(text, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Positioned(
@@ -71,4 +73,3 @@ class TitleWithUnderline extends StatelessWidget{
     );
   }
 }
-

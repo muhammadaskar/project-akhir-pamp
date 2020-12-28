@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:projek_akhir/ui/AkademikPage.dart';
 
 import '../constants.dart';
 
 class BottomNavigation extends StatefulWidget{
   @override
   State<StatefulWidget> createState() => bottomNavigationBar();
+
 
 }
 
@@ -53,7 +55,9 @@ class bottomNavigationBar extends State<BottomNavigation>{
           // Padding(padding: EdgeInsets.only(left: 15, right: 5)),
           IconButton(
               icon: Icon(Icons.school, size: 30),
-              onPressed: (){}
+              onPressed: (){
+                Navigator.of(context).pushNamed('/academic');
+              }
           )
         ],
       ),
